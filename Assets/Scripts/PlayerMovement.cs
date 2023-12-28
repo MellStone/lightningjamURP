@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Поворот модели игрока
             Quaternion toRotation = Quaternion.LookRotation(movementInput);
-            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
         // Перемещение игрока

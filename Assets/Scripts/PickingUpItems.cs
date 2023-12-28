@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PickingUpItems : MonoBehaviour
 {
-    [SerializeField, Range(0f, 3f)] private float maxDistance = 1.0f;
     [SerializeField, Range(0.5f, 2.5f)] private float radius = 0.3f;
     [SerializeField] private LayerMask layerMask;
 
@@ -16,7 +15,7 @@ public class PickingUpItems : MonoBehaviour
 
     private void Start()
     {
-        Bonfire bonfire = FindObjectOfType<Bonfire>();
+        Campfire bonfire = FindObjectOfType<Campfire>();
         if (bonfire != null)
         {
             bonfire.OnObjectDestroyed += HandleObjectDestroyed;

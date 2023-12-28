@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Bonfire : MonoBehaviour
+public class Campfire : MonoBehaviour
 {
     public event Action<GameObject> OnObjectDestroyed;
 
@@ -27,8 +27,21 @@ public class Bonfire : MonoBehaviour
     {
         if (other.tag == "Log")
         {
+            Log log = other.GetComponent<Log>();
+            LogSpawner logSpawner = log.originalSpawner;
+            if (logSpawner != null)
+            {
+                // Передаем бревно для удаления и спауна нового
+                logSpawner.RemoveLog(other.gameObject);
+                fireTime += logTime;
+                OnObjectDestroyed?.Invoke(other.gameObject);
+            }
+        }
+
+        if (other.tag == "Cherry")
+        {
             Destroy(other.gameObject);
-            fireTime += logTime;
+            
 
             OnObjectDestroyed?.Invoke(other.gameObject);
         }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Campfire
   - Log
+  - Cherry
   layers:
   - Default
   - TransparentFX
