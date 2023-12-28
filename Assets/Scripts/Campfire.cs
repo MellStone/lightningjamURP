@@ -14,6 +14,8 @@ public class Campfire : MonoBehaviour
     [Range(0f, 20f)] public float burnerSpeed = 1f;
 
     [SerializeField] private float logTime = 15f;
+
+
     [SerializeField] private Slider heatBar;
 
 
@@ -25,25 +27,28 @@ public class Campfire : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Log")
-        {
-            Log log = other.GetComponent<Log>();
-            LogSpawner logSpawner = log.originalSpawner;
-            if (logSpawner != null)
+        // Checking if has component SpawnerID
+        if (other.TryGetComponent<SpawnerID>(out SpawnerID objectInHands))
+        {   
+            // Refer to the spawner where the object was taken from
+            Spawner Spawner = objectInHands.originalSpawner;
+            if (other.tag == "Log")
             {
-                // Передаем бревно для удаления и спауна нового
-                logSpawner.RemoveLog(other.gameObject);
-                fireTime += logTime;
+                // Transfer obj to remove and spawn a new one
+                Spawner.RemoveObject(other.gameObject);
                 OnObjectDestroyed?.Invoke(other.gameObject);
+
+                fireTime += logTime;
             }
-        }
+        
 
-        if (other.tag == "Cherry")
-        {
-            Destroy(other.gameObject);
-            
+            if (other.tag == "Cherry")
+            {
+                Spawner.RemoveObject(other.gameObject);
+                OnObjectDestroyed?.Invoke(other.gameObject);
 
-            OnObjectDestroyed?.Invoke(other.gameObject);
+                
+            }
         }
     }
 

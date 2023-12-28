@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickingUpItems : MonoBehaviour
@@ -11,6 +9,7 @@ public class PickingUpItems : MonoBehaviour
 
     public KeyCode attackKey = KeyCode.E;
 
+    private Collider attachedObject = null;
     bool isItemAttached = false;
 
     private void Start()
@@ -32,9 +31,12 @@ public class PickingUpItems : MonoBehaviour
         {
             if (!isItemAttached)
                 AttachSelectableObject();
+            else
+                DetachObject();
+
         }
     }
-    void AttachSelectableObject()
+    private void AttachSelectableObject()
     {
         Collider closestCollider = null;
         float closestDistance = float.MaxValue;
@@ -74,11 +76,24 @@ public class PickingUpItems : MonoBehaviour
                 closestCollider.transform.localPosition = Vector3.zero;
                 closestCollider.transform.localRotation = Quaternion.identity;
 
+                attachedObject = closestCollider;
+
                 isItemAttached = true;
             }
         }
     }
 
+    private void DetachObject()
+    {
+        Rigidbody itemRigidbody = attachedObject.GetComponent<Rigidbody>();
+        itemRigidbody.useGravity = true;
+        itemRigidbody.isKinematic = false;
+
+        attachedObject.transform.parent = null;
+
+        attachedObject = null;
+        isItemAttached = false;
+    }
     private void OnDrawGizmos()
     {
         // Area to Attach item
