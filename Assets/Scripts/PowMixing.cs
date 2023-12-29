@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PowMixing : MonoBehaviour
 {
+    [SerializeField] private GameBalanceSO items;
+
     int cherryInPow = 0;
     int mushroomInPow = 0;
 
     public int productsInPow = 0;
-    public int maxProductsInPow = 2;
+    public int maxProductsInPow;
 
-    float commonMixingHeat = 20f;
-    float bonusMixingHeat = 25f;
+    float commonMixingHeat;
+    float bonusMixingHeat;
 
+    private void Awake()
+    {
+        maxProductsInPow = items.maxProductsInPow;
+        commonMixingHeat = items.mixedSoup;
+        bonusMixingHeat = items.perfectSoup;
+    }
     float TryMixingPow()
     {
         if (productsInPow >= maxProductsInPow)

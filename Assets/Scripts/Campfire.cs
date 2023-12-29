@@ -10,16 +10,30 @@ public class Campfire : MonoBehaviour
 {
     public event Action<GameObject> OnObjectDestroyed;
 
-    [Range(0f, 100f)] public float fireTime = 100f;
-    [SerializeField] private float maxFireTime = 100f;
-    [Range(0f, 20f)] public float burnerSpeed = 1f;
+    [Range(0f, 100f)] public float fireTime;
+    [SerializeField] private float maxFireTime;
+    [Range(0f, 20f)] public float burnerSpeed;
 
-    [SerializeField] private float logTime = 15f;
+    [SerializeField] private float logTime;
 
+    [SerializeField] private GameBalanceSO items;
     [SerializeField] private PowMixing pow;
     [SerializeField] private Slider heatBar;
 
+    private void OnEnable()
+    {
+        GameTimer.OnMinutePassed += HandleMinutePassed;
+    }
 
+    private void Awake()
+    {
+        logTime = items.log;
+
+        fireTime = items.maxHeatCount;
+        maxFireTime = items.maxHeatCount;
+        burnerSpeed = items.heatDropRate;
+        
+    }
     private void Update()
     {
         BurningBonfire();   
@@ -75,5 +89,15 @@ public class Campfire : MonoBehaviour
         {
             SceneManager.LoadScene("EndGameScene");
         }
+    }
+    private void HandleMinutePassed()
+    {
+        // Действия, выполняемые при прошедшей минуте
+        burnerSpeed += items.heatDropRate;
+        Debug.Log("Minute Passed!");
+    }
+    private void OnDisable()
+    {
+        GameTimer.OnMinutePassed -= HandleMinutePassed;
     }
 }
