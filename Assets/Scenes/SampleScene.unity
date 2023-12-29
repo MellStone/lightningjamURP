@@ -1656,6 +1656,84 @@ RectTransform:
   m_AnchoredPosition: {x: -0.037498474, y: 0}
   m_SizeDelta: {x: -10.0751, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &945821056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333537149129443639, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176074916933928080, guid: 6404754548b8955448a244fa3a24c114,
+        type: 3}
+      propertyPath: m_Name
+      value: Bonfire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6404754548b8955448a244fa3a24c114, type: 3}
 --- !u!1 &1250239405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,3 +2590,4 @@ SceneRoots:
   - {fileID: 283027987}
   - {fileID: 2120369322}
   - {fileID: 1332451363}
+  - {fileID: 945821056}
