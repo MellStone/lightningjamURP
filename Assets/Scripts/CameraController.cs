@@ -8,12 +8,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     
 
-    private Vector3 offset;
+    [SerializeField] private Vector3 offset;
     private Vector3 velocity;
 
     private void Start()
     {
-        offset = transform.position;
+        //offset = transform.position;
         HideCursor();
     }
     private void FixedUpdate()

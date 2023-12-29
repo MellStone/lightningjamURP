@@ -28,13 +28,11 @@ public class CherryBush : MonoBehaviour
                 {
                     if (iD.isPickedFromSpawner == false)
                     {
-                        Debug.Log("1st if: " + iD.isPickedFromSpawner);
                         ShowCherry(true);
                         return;
                     }
                     else if (iD.isPickedFromSpawner)
                     {
-                        Debug.Log("2nd if: " + iD.isPickedFromSpawner);
                         ShowCherry(false);
                     }
                 }
