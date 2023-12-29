@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ModelToSpawn: {fileID: 3745109242832213758, guid: c76f3a0ad8ada254dabc6763842caae7,
     type: 3}
+  isSpawned: 1
 --- !u!1001 &5589673410542392386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,6 +61,16 @@ PrefabInstance:
       propertyPath: originalSpawner
       value: 
       objectReference: {fileID: 2431498463504520577}
+    - target: {fileID: 296796440451550486, guid: c76f3a0ad8ada254dabc6763842caae7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 296796440451550486, guid: c76f3a0ad8ada254dabc6763842caae7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3745109242832213758, guid: c76f3a0ad8ada254dabc6763842caae7,
         type: 3}
       propertyPath: m_Name

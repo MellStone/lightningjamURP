@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private Vector3 movementInput;
 
+    [SerializeField] Animator controller;
     CharacterController characterController;
     Rigidbody rb;
 
@@ -18,11 +19,12 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerMovementInput();
         MovePlayer();
-        //CharachterControllerMove();
+        //CharacterControllerMove();
     }
 
-    private void CharachterControllerMove()
-    {
+    
+    private void CharacterControllerMove()
+    { // Old movement based on Character Controller Component, which seems not so smooth on moving
         characterController.Move(movementInput * moveSpeed * Time.fixedDeltaTime);
 
         if (movementInput != Vector3.zero)
@@ -45,12 +47,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementInput != Vector3.zero)
         {
-            // Поворот модели игрока
+            controller.SetBool("isRunning", true);
+            // Rotating player model
             Quaternion toRotation = Quaternion.LookRotation(movementInput);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-
-        // Перемещение игрока
+        else
+            controller.SetBool("isRunning", false);
+        // Player movement
         Vector3 newPosition = rb.position + movementInput * moveSpeed * Time.deltaTime;
         rb.MovePosition(newPosition);
     }

@@ -15,7 +15,7 @@ public class Campfire : MonoBehaviour
 
     [SerializeField] private float logTime = 15f;
 
-
+    [SerializeField] private PowMixing pow;
     [SerializeField] private Slider heatBar;
 
 
@@ -47,7 +47,15 @@ public class Campfire : MonoBehaviour
                 Spawner.RemoveObject(other.gameObject);
                 OnObjectDestroyed?.Invoke(other.gameObject);
 
-                
+                fireTime += pow.AddCherryToPow();
+            }
+            if (other.tag == "Mushroom")
+            {
+                Spawner.RemoveObject(other.gameObject);
+                OnObjectDestroyed?.Invoke(other.gameObject);
+
+                fireTime += pow.AddMushroomToPow();
+
             }
         }
     }

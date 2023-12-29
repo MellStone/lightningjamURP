@@ -60,13 +60,14 @@ public class PickingUpItems : MonoBehaviour
                 closestCollider = hitCollider;
             }
         }
-        // Attaching to attachPoint
+        // Attaching to Attach Point in Player
         if (closestCollider != null)
         {
             Rigidbody itemRigidbody = closestCollider.GetComponent<Rigidbody>();
 
             if (itemRigidbody != null)
             {   // Turn off RigidBoy
+                closestCollider.isTrigger = true;
                 itemRigidbody.useGravity = false;
                 itemRigidbody.isKinematic = true;
 
@@ -85,9 +86,11 @@ public class PickingUpItems : MonoBehaviour
 
     private void DetachObject()
     {
+        attachedObject.isTrigger = false;
         Rigidbody itemRigidbody = attachedObject.GetComponent<Rigidbody>();
         itemRigidbody.useGravity = true;
         itemRigidbody.isKinematic = false;
+        
 
         attachedObject.transform.parent = null;
 

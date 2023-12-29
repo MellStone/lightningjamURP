@@ -7,10 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject ModelToSpawn; // Spawning prefab
     private float spawnInterval = 10f; // Interval spawn in seconds
 
-
-    [SerializeField] private bool isCherry;
-
-    private bool isSpawned = true;
+    public bool isSpawned = true;
     // For upscaling - for now not needed
     // List to track spawned objects
     // private List<GameObject> spawnedObjects = new List<GameObject>();
