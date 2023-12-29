@@ -6,33 +6,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private Vector3 movementInput;
 
+    [SerializeField] GameObject rotateModel;
     [SerializeField] Animator controller;
-    CharacterController characterController;
     Rigidbody rb;
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         PlayerMovementInput();
         MovePlayer();
-        //CharacterControllerMove();
     }
-
     
-    private void CharacterControllerMove()
-    { // Old movement based on Character Controller Component, which seems not so smooth on moving
-        characterController.Move(movementInput * moveSpeed * Time.fixedDeltaTime);
-
-        if (movementInput != Vector3.zero)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(movementInput);
-            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.fixedDeltaTime);
-        }
-    }
 
     void PlayerMovementInput()
     {
@@ -50,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             controller.SetBool("isRunning", true);
             // Rotating player model
             Quaternion toRotation = Quaternion.LookRotation(movementInput);
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            rotateModel.transform.rotation = Quaternion.Slerp(rotateModel.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
         else
             controller.SetBool("isRunning", false);
