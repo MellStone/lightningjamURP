@@ -78,7 +78,7 @@ public class PickingUpItems : MonoBehaviour
                 closestCollider.transform.localRotation = Quaternion.identity;
 
                 attachedObject = closestCollider;
-
+                attachedObject.GetComponent<SpawnerID>().isPickedFromSpawner = true;
                 isItemAttached = true;
             }
         }

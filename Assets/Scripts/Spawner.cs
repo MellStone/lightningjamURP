@@ -7,14 +7,13 @@ public class Spawner : MonoBehaviour
     public GameObject ModelToSpawn; // Spawning prefab
     private float spawnInterval = 10f; // Interval spawn in seconds
 
-    public bool isSpawned = true;
     // For upscaling - for now not needed
     // List to track spawned objects
-    // private List<GameObject> spawnedObjects = new List<GameObject>();
+    public List<GameObject> spawnedObjects = new List<GameObject>();
     void Spawn()
     {
         
-        if (!isSpawned)
+        if (spawnedObjects.Count == 0)
         {
             // Creating new Object
             GameObject newSpawnObject = Instantiate(ModelToSpawn, transform.position, Quaternion.identity);
@@ -28,6 +27,8 @@ public class Spawner : MonoBehaviour
 
             // Parenting to Spawner Object
             newSpawnObject.transform.parent = transform;
+
+            spawnedObjects.Add(newSpawnObject);
         }
     }
 
@@ -35,9 +36,8 @@ public class Spawner : MonoBehaviour
     {
         // For upscaling
         // Remove the object from the list
-        // spawnedObjects.Remove(modelToRemove);
+        spawnedObjects.Remove(modelToRemove);
 
-        isSpawned = false;
         Destroy(modelToRemove);
         
         StartCoroutine(SpawnAfterDelay());

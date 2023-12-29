@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3917003951506378021}
   - component: {fileID: 2431498463504520577}
   m_Layer: 0
-  m_Name: LogSpawner
+  m_Name: Branch Spawner
   m_TagString: Log
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
