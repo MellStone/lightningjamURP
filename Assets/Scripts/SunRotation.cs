@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SunRotation : MonoBehaviour
 {
-    private float speedRotation = 3f;
+    [SerializeField] private float speedRotation = 3f;
     private Light m_light;
     private float intensityOnStart;
     private void Start()

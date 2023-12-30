@@ -19,6 +19,7 @@ public class Campfire : MonoBehaviour
     [SerializeField] private GameBalanceSO items;
     [SerializeField] private PowMixing pow;
     [SerializeField] private Slider heatBar;
+    [SerializeField] private ShowFireUI spriteManager;
 
     private void OnEnable()
     {
@@ -94,10 +95,11 @@ public class Campfire : MonoBehaviour
     {
         // Действия, выполняемые при прошедшей минуте
         burnerSpeed += items.heatDropRate;
-        Debug.Log("Minute Passed!");
+        spriteManager.ShowMinutePassedSprite();
     }
     private void OnDisable()
     {
         GameTimer.OnMinutePassed -= HandleMinutePassed;
     }
+
 }

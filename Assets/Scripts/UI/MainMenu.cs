@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LevelSceneForMainMenu");
     }
     public void Options()
     {

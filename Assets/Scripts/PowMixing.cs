@@ -6,6 +6,8 @@ using UnityEngine.Rendering.Universal;
 public class PowMixing : MonoBehaviour
 {
     [SerializeField] private GameBalanceSO items;
+    [SerializeField] private GameObject[] mushroomImage;
+    [SerializeField] private GameObject[] cherryImage;
 
     int cherryInPow = 0;
     int mushroomInPow = 0;
@@ -49,6 +51,7 @@ public class PowMixing : MonoBehaviour
     {
         ++cherryInPow;
         ++productsInPow;
+        ShowCherryInUI(cherryInPow);
         return TryMixingPow();
     }
 
@@ -56,6 +59,7 @@ public class PowMixing : MonoBehaviour
     {
         ++mushroomInPow;
         ++productsInPow;
+        ShowMushroomInUI(mushroomInPow);
         return TryMixingPow();
     }
     void ResetCounters()
@@ -63,7 +67,33 @@ public class PowMixing : MonoBehaviour
         productsInPow = 0;
         cherryInPow = 0;
         mushroomInPow = 0;
+        ResetImages();
     }
 
-    
+    void ResetImages()
+    {
+        foreach(var cherry in cherryImage)
+        {
+            cherry.SetActive(false);
+        }
+        foreach (var mushroom in mushroomImage)
+        {
+            mushroom.SetActive(false);
+        }
+    }
+    void ShowCherryInUI(int count)
+    {
+        for (int i = 0; i < cherryImage.Length; i++)
+        {
+            cherryImage[i].SetActive(i < count);
+        }
+    }
+
+    void ShowMushroomInUI(int count)
+    {
+        for (int i = 0; i < mushroomImage.Length; i++)
+        {
+            mushroomImage[i].SetActive(i < count);
+        }
+    }
 }
