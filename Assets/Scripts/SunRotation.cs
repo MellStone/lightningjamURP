@@ -7,9 +7,11 @@ public class SunRotation : MonoBehaviour
 {
     private float speedRotation = 3f;
     private Light m_light;
+    private float intensityOnStart;
     private void Start()
     {
         m_light = GetComponent<Light>();
+        intensityOnStart = m_light.intensity;
     }
     private void Update()
     {
@@ -17,7 +19,7 @@ public class SunRotation : MonoBehaviour
         transform.Rotate(1f * speedRotation * Time.deltaTime, 0f, 0f, Space.World);
         if (currentRotation > 0f && currentRotation < 180f)
         {
-            m_light.intensity = 1f;
+            m_light.intensity = intensityOnStart;
         }
         else
             m_light.intensity = 0f;

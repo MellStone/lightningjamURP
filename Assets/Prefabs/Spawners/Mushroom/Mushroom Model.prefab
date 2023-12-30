@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8572755063992315017}
+  - {fileID: 6139714192971299440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &680771576240545234
@@ -162,7 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc5decf622f78b489e8f70c784bc1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3243810687993746397
+  mushroom: {fileID: 0}
+--- !u!1001 &44609386740744292
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -170,69 +171,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8350219979326119025}
     m_Modifications:
-    - target: {fileID: 5816134218127418862, guid: 2eebd5ce032a9974e8156f114c7be0c9,
-        type: 3}
-      propertyPath: m_Name
-      value: Mushroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.162
+      value: 0.188
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.00000003774895
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+    - target: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836755792945651886, guid: 6068e10b1a7128942b956de628925613,
+        type: 3}
+      propertyPath: m_Name
+      value: Mushrooms
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2eebd5ce032a9974e8156f114c7be0c9, type: 3}
---- !u!4 &8572755063992315017 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 6068e10b1a7128942b956de628925613, type: 3}
+--- !u!4 &6139714192971299440 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6628418960847732564, guid: 2eebd5ce032a9974e8156f114c7be0c9,
+  m_CorrespondingSourceObject: {fileID: 6172985414655080980, guid: 6068e10b1a7128942b956de628925613,
     type: 3}
-  m_PrefabInstance: {fileID: 3243810687993746397}
+  m_PrefabInstance: {fileID: 44609386740744292}
   m_PrefabAsset: {fileID: 0}

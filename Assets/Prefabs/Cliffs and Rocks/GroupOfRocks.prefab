@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6922397493588144634
 Transform:
@@ -97,6 +97,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere.002
       objectReference: {fileID: 0}
+    - target: {fileID: 7501101880784170815, guid: da2cc404948fbc042b97499cf1b98d78,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -171,6 +176,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere.004
       objectReference: {fileID: 0}
+    - target: {fileID: 7126454884936408746, guid: 4199527e264cbc1448e3b935d561a87f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -244,6 +254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381516545477021718, guid: 9a202b08b4792f942b1144c37b91f564,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
