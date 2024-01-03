@@ -22,8 +22,7 @@ public class PickingUpItems : MonoBehaviour
     }
     private void HandleObjectDestroyed(GameObject destroyedObject)
     {
-        // Обработка события удаления объекта
-        isItemAttached = false;
+        isItemAttached = false; // Event if attached item is destroyed
     }
     void Update()
     {
@@ -43,7 +42,7 @@ public class PickingUpItems : MonoBehaviour
 
         // Sphere Cast Overlapping
         Collider[] hitColliders = Physics.OverlapSphere(
-            attachPoint.position, // Используем позицию attachPoint вместо позиции игрока
+            attachPoint.position,
             radius,
             layerMask,
             QueryTriggerInteraction.Collide
@@ -77,6 +76,7 @@ public class PickingUpItems : MonoBehaviour
                 closestCollider.transform.localPosition = Vector3.zero;
                 closestCollider.transform.localRotation = Quaternion.identity;
 
+                // For Campfire class, collecting info about where attached items has been picked
                 attachedObject = closestCollider;
                 attachedObject.GetComponent<SpawnerID>().isPickedFromSpawner = true;
                 isItemAttached = true;
@@ -86,6 +86,7 @@ public class PickingUpItems : MonoBehaviour
 
     private void DetachObject()
     {
+        // Turn on Physic
         attachedObject.isTrigger = false;
         Rigidbody itemRigidbody = attachedObject.GetComponent<Rigidbody>();
         itemRigidbody.useGravity = true;

@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSceneForMainMenu.unity
     guid: a89e34280e4d73c45862a70d820c427e
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/A_MainMenu.unity
     guid: 97fa5f223422e0e44bd69833a0b9ea53
   - enabled: 1
     path: Assets/Scenes/EndLessLevelScene.unity
     guid: 8d3e7536ee44ea94abef6ca0c1a813ce
   - enabled: 1
-    path: Assets/Scenes/EndGameScene.unity
+    path: Assets/Scenes/A_EndGame.unity
     guid: 68ae778f9c1ba614faaa7c972c84a6ba
   m_configObjects: {}

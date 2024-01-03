@@ -8,17 +8,21 @@ public class GameBalanceSO : ScriptableObject
 {
     [Header("Heat Generating Items")]
     public float log = 10f;
-    public float perfectSoup = 25f;
-    public float mixedSoup = 20f;
+
+    [Space]
+    [Header("Pow settings")]
+    public int maxProductsInPow = 2;
+    [Space]
+    public float berry = 10f;
+    public float mushroom = 10f;
+    [Space]
+    public float perfectSoupFactor = 1.25f;
+    public float mixedSoupFactor = 0f;
 
     [Space]
     [Header("Campfire settings")]
     public float maxHeatCount = 100f;
     public float heatDropRate = 1f;
-
-    [Space]
-    [Header("Pow settings")]
-    public int maxProductsInPow = 2;
 
     [Space]
     [Header("Spawner settings")]

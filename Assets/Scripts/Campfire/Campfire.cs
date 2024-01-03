@@ -57,20 +57,21 @@ public class Campfire : MonoBehaviour
                 AddToFireTimer(logTime);
             }
         
-
+            // If its product to Pow
             if (other.tag == "Cherry")
             {
                 Spawner.RemoveObject(other.gameObject);
                 OnObjectDestroyed?.Invoke(other.gameObject);
 
-                AddToFireTimer(pow.AddCherryToPow());
+                AddToFireTimer(pow.AddProductToPow(ProductCode.Berry));
             }
+
             if (other.tag == "Mushroom")
             {
                 Spawner.RemoveObject(other.gameObject);
                 OnObjectDestroyed?.Invoke(other.gameObject);
 
-                AddToFireTimer(pow.AddMushroomToPow());
+                AddToFireTimer(pow.AddProductToPow(ProductCode.Mushroom));
 
             }
         }
@@ -78,7 +79,7 @@ public class Campfire : MonoBehaviour
     private void AddToFireTimer(float countToAdd)
     {
         fireTime += countToAdd;
-        if (fireTime > maxFireTime)
+        if (fireTime > maxFireTime) // To keep it from going over the maximum value
             fireTime = maxFireTime;
     }
     private void BurningBonfire()
@@ -93,7 +94,6 @@ public class Campfire : MonoBehaviour
     }
     private void HandleMinutePassed()
     {
-        // Действия, выполняемые при прошедшей минуте
         burnerSpeed += items.heatDropRate;
         spriteManager.ShowMinutePassedSprite();
     }

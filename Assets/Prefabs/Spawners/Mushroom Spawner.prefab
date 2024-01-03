@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eec3d89456cd194485600128c1107e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ModelToSpawn: {fileID: 3745109242832213758, guid: c76f3a0ad8ada254dabc6763842caae7,
+  ModelToSpawn: {fileID: 3745109242832213758, guid: 5b0afa41c81af3e4cb1cc295d9711a66,
     type: 3}
-  isSpawned: 1
+  spawnedObjects: []
 --- !u!1001 &7338624811556968872
 PrefabInstance:
   m_ObjectHideFlags: 0

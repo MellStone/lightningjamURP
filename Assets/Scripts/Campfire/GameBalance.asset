@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: GameBalance
   m_EditorClassIdentifier: 
   log: 10
-  perfectSoup: 25
-  mixedSoup: 20
+  maxProductsInPow: 3
+  berry: 10
+  mushroom: 10
+  perfectSoupFactor: 1.25
+  mixedSoupFactor: 0
   maxHeatCount: 100
   heatDropRate: 1
-  maxProductsInPow: 2
   spawnIntervals: 10
   minSpawnIntervals: 8
   maxSpawnIntervals: 15
