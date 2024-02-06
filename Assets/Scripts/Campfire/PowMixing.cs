@@ -82,6 +82,7 @@ public class PowMixing : MonoBehaviour
 public enum ProductCode
 {
     Berry = 0,
-    Mushroom = 1
+    Mushroom = 1,
+    Log = 2
 }
 

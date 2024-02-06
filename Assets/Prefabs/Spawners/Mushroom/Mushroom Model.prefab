@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPickedFromSpawner: 0
   originalSpawner: {fileID: 0}
+  productCode: 1
+  time: 0
 --- !u!114 &1674720683767976185
 MonoBehaviour:
   m_ObjectHideFlags: 0

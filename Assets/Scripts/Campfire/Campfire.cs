@@ -47,33 +47,18 @@ public class Campfire : MonoBehaviour
         if (other.TryGetComponent<SpawnerID>(out SpawnerID objectInHands))
         {
             // Refer to the spawner where the object was taken from
+
             Spawner Spawner = objectInHands.originalSpawner;
-            if (other.tag == "Log")
-            {
-                // Transfer obj to remove and spawn a new one
-                Spawner.RemoveObject(other.gameObject);
-                OnObjectDestroyed?.Invoke(other.gameObject);
+            Spawner.RemoveObject(other.gameObject);
+            OnObjectDestroyed?.Invoke(other.gameObject);
 
-                AddToFireTimer(logTime);
-            }
-        
-            // If its product to Pow
-            if (other.tag == "Cherry")
+            if(objectInHands.productCode == ProductCode.Log)
             {
-                Spawner.RemoveObject(other.gameObject);
-                OnObjectDestroyed?.Invoke(other.gameObject);
-
-                AddToFireTimer(pow.AddProductToPow(ProductCode.Berry));
+                AddToFireTimer(objectInHands.time);
+                return;
             }
 
-            if (other.tag == "Mushroom")
-            {
-                Spawner.RemoveObject(other.gameObject);
-                OnObjectDestroyed?.Invoke(other.gameObject);
-
-                AddToFireTimer(pow.AddProductToPow(ProductCode.Mushroom));
-
-            }
+            AddToFireTimer(pow.AddProductToPow(objectInHands.productCode));
         }
     }
     private void AddToFireTimer(float countToAdd)
